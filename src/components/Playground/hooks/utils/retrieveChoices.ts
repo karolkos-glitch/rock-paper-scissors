@@ -1,4 +1,4 @@
-import type { GameState, GAME_CHOICES } from "../../../../settings";
+import type { GameState, GAME_CHOICES } from "@rps/settings";
 
 export const retrieveUserChoice = (
   gameState: GameState

@@ -8,9 +8,7 @@ export default {
 } as ComponentMeta<typeof InGameView>;
 
 const Template: ComponentStory<typeof InGameView> = () => (
-  <InGameView
-    renderOption={(option) => <Option type={option} />}
-  />
+  <InGameView renderOption={(option) => <Option type={option} />} />
 );
 
 export const Story = Template.bind({});

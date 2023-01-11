@@ -17,10 +17,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
+    "types": ["vitest/globals", "vitest/importMeta"],
     "paths": {
       "@rps/*": ["./*"],
     }
   },
-  "include": ["src"],
+  "include": ["src", "./vitest.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

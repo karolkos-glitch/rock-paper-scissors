@@ -1,4 +1,4 @@
-import type { GAME_CHOICES, GAME_RESULT } from "../../../../settings";
+import type { GAME_CHOICES, GAME_RESULT } from "@rps/settings";
 
 const resolveGame = (
   userOption: GAME_CHOICES,
