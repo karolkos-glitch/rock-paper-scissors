@@ -18,9 +18,6 @@ interface WaitingForHouseChoiceState {
   userChoice: GAME_CHOICES;
 }
 
-interface ErrorInGameState {
-  type: "ERROR";
-}
 
 interface HouseChoiceState {
   type: "HOUSE_CHOICE";
@@ -32,5 +29,4 @@ export type GameState =
   | ResultState
   | UserChoiceState
   | WaitingForHouseChoiceState
-  | ErrorInGameState
   | HouseChoiceState;

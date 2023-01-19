@@ -8,7 +8,7 @@ import {
   retrieveUserChoice,
 } from "./utils/retrieveChoices";
 
-const usePlayground = () => {
+export const usePlayground = () => {
   const { setNewScore } = useScoreStore();
   const [activeState, setActiveState] = useState<GameState>({
     type: "USER_CHOICE",
@@ -37,15 +37,10 @@ const usePlayground = () => {
       setActiveState({ type: "WAITNG_FOR_HOUSE_CHOICE", userChoice }),
     []
   );
-  const _displayError = useCallback(
-    () => setActiveState({ type: "ERROR" }),
-    []
-  );
 
   // public
   const chooseOption = async (userOption: GAME_CHOICES) => {
     _displayWaitingForHouseChoice(userOption);
-    try {
       const houseOption = await retrieveHouseOption();
       _displayHouseChoice(houseOption, userOption);
       setTimeout(() => {
@@ -53,9 +48,6 @@ const usePlayground = () => {
         _displayResult(result, userOption, houseOption);
         setNewScore(result);
       }, 4000);
-    } catch {
-      _displayError();
-    }
   };
 
   const userChoice = retrieveUserChoice(activeState);

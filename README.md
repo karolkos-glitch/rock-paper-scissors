@@ -16,6 +16,7 @@ During development I tried/improved my skills in:
  - zustand
  - storybook
  - vite 
+ - vitest
  - React Composition API
  - mermaid
 

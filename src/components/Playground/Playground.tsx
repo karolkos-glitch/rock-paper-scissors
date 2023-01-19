@@ -17,6 +17,7 @@ const Playground = () => {
               : "";
           return (
             <button
+              key={option}
               className={gridClasses}
               onClick={() => chooseOption(option)}
             >
@@ -53,7 +54,6 @@ const Playground = () => {
         </Result>
       </ChoicesInformationWrapper>
     ),
-    ERROR: <div>Error!</div>,
   };
 
   return <main className="p-8">{views[gameStage]}</main>;

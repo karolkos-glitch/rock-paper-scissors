@@ -11,10 +11,6 @@ describe.concurrent("usePlayground - utils - retrieveChoices", () => {
     describe('retrieveUserChoice', () => {
         it.each<RetrieveChoicesTestCase>([
             {
-                gameStateType: "ERROR",
-                expectedResult: null,
-            },
-            {
                 gameStateType: "USER_CHOICE",
                 expectedResult: null,
             },
@@ -46,10 +42,6 @@ describe.concurrent("usePlayground - utils - retrieveChoices", () => {
 
     describe('retrieveHouseChoice', () => {
         it.each<RetrieveChoicesTestCase>([
-            {
-                gameStateType: "ERROR",
-                expectedResult: null,
-            },
             {
                 gameStateType: "USER_CHOICE",
                 expectedResult: null,

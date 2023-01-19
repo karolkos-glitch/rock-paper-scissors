@@ -24,7 +24,7 @@ const Option = ({ type }: OptionProps) => {
       }
     >
       <figure>
-        <img src={images[type]} alt="option" />
+        <img src={images[type]} alt={`Option - ${type}`} />
       </figure>
     </div>
   );
