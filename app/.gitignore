@@ -24,7 +24,10 @@ tconfig.temp.json
 *.njsproj
 *.sln
 *.sw?
+tsconfig.temp.json
+
 
 # tests 
 html
 coverage
+

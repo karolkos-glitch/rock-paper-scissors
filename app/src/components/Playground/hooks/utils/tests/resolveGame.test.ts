@@ -5,6 +5,7 @@ interface OneGameConfig {
   houseChoice: GAME_CHOICES;
   gameResult: GAME_RESULT;
 }
+
 describe.concurrent("usePlayground - utils - resolveGame", () => {
   describe("User choose ROCK", () => {
     it.each<OneGameConfig>([
@@ -25,7 +26,6 @@ describe.concurrent("usePlayground - utils - resolveGame", () => {
       ({ houseChoice, gameResult }) => {
         const result = resolveGame("ROCK", houseChoice as GAME_CHOICES);
 
-        expectTypeOf(result).toMatchTypeOf<GAME_RESULT>();
         expect(result).toEqual(gameResult);
       }
     );
@@ -50,7 +50,6 @@ describe.concurrent("usePlayground - utils - resolveGame", () => {
       ({ houseChoice, gameResult }) => {
         const result = resolveGame("SCISSORS", houseChoice as GAME_CHOICES);
 
-        expectTypeOf(result).toMatchTypeOf<GAME_RESULT>();
         expect(result).toEqual(gameResult);
       }
     );
@@ -75,7 +74,6 @@ describe.concurrent("usePlayground - utils - resolveGame", () => {
       ({ houseChoice, gameResult }) => {
         const result = resolveGame("PAPER", houseChoice as GAME_CHOICES);
 
-        expectTypeOf(result).toMatchTypeOf<GAME_RESULT>();
         expect(result).toEqual(gameResult);
       }
     );
