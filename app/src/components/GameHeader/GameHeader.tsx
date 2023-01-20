@@ -5,6 +5,7 @@ const GameHeader = () => {
 
   return (
     <div
+      data-testid="game-header"
       className="mx-auto my-12 flex flex-row max-w-[90%] 
           justify-between items-center p-8 border-header-outline border-2 rounded-[16px]"
     >

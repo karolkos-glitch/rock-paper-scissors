@@ -56,7 +56,7 @@ const Playground = () => {
     ),
   };
 
-  return <main className="p-8">{views[gameStage]}</main>;
+  return <main data-testid="playground" className="p-8">{views[gameStage]}</main>;
 };
 
 export default Playground;
