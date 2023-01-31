@@ -1,0 +1,72 @@
+name: Node
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  jest:
+    defaults:
+      run:
+        working-directory: ./app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "v16.13.2"
+          cache: 'yarn'
+          cache-dependency-path: './app/yarn.lock'
+
+      - name: Install packages with yarn
+        run: yarn install
+
+      - name: Run tests with vitest
+        run: yarn test 
+  
+  lint:
+    defaults:
+      run:
+        working-directory: ./app
+    needs: jest 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "v16.13.2"
+          cache: 'yarn'
+          cache-dependency-path: './app/yarn.lock'
+      
+      - name: Install packages with yarn
+        run: yarn install
+
+      - name: Run eslint
+        run: yarn eslint
+
+  typecheck:
+    defaults:
+      run:
+        working-directory: ./app
+    needs: jest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "v16.13.2"
+          cache: 'yarn'
+          cache-dependency-path: './app/yarn.lock'
+      
+      - name: Install packages with yarn
+        run: yarn install
+
+      - name: Run typecheck
+        run: yarn typecheck    
+
+
+
+      
