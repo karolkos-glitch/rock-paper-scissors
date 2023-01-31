@@ -18,10 +18,6 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: './app/yarn.lock'
 
-      - name: Checking if working directory is working
-        working-directory: ./app
-        run: ls
-
       - name: Install packages with yarn
         working-directory: ./app
         run: yarn install
@@ -29,6 +25,45 @@ jobs:
       - name: Run tests with vitest
         working-directory: ./app
         run: yarn test 
+  
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "v16.13.2"
+          cache: 'yarn'
+          cache-dependency-path: './app/yarn.lock'
+      
+      - name: Install packages with yarn
+        working-directory: ./app
+        run: yarn install
+
+      - name: Run eslint
+        working-directory: ./app
+        run: yarn eslint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "v16.13.2"
+          cache: 'yarn'
+          cache-dependency-path: './app/yarn.lock'
+      
+      - name: Install packages with yarn
+        working-directory: ./app
+        run: yarn install
+
+      - name: Run typecheck
+        working-directory: ./app
+        run: yarn typecheck    
+
 
 
       
