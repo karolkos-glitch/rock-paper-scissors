@@ -5,9 +5,9 @@ import usePlayground from "../hooks/usePlayground";
 
 vi.mock("@rps/components/Playground/hooks/usePlayground");
 
-const getChoiceWrapperHeadingTexts = () => {
-  expect(screen.getByText(/YOU PICKED/)).toBeTruthy();
-  expect(screen.getByText(/THE HOUSE PICKED/)).toBeTruthy();
+const getChoiceWrapperHeadingTexts = async () => {
+  expect(await screen.findByText(/YOU PICKED/)).toBeTruthy();
+  expect(await screen.findByText(/THE HOUSE PICKED/)).toBeTruthy();
 };
 
 describe("<Playground />", () => {
@@ -48,7 +48,7 @@ describe("<Playground />", () => {
   });
 
   describe('If the GameStage equals "RESULT', () => {
-    it('render ChoicesInformationWrapper and "Try Again" button', () => {
+    it('render ChoicesInformationWrapper and "Try Again" button', async () => {
       vi.mocked(usePlayground).mockReturnValueOnce({
         gameStage: "RESULT",
         userChoice: "PAPER",
@@ -60,13 +60,13 @@ describe("<Playground />", () => {
 
       getChoiceWrapperHeadingTexts();
       expect(
-        screen.getByRole("button", {
+        await screen.findByRole("button", {
           name: "PLAY AGAIN",
         })
       ).toBeTruthy();
     });
 
-    it('render draw content when the result is "DRAW', () => {
+    it('render draw content when the result is "DRAW', async () => {
       vi.mocked(usePlayground).mockReturnValueOnce({
         gameStage: "RESULT",
         userChoice: "PAPER",
@@ -76,10 +76,10 @@ describe("<Playground />", () => {
 
       render(<Playground />);
 
-      expect(screen.getByText(/DRAW/));
+      expect(await screen.findByText(/DRAW/));
     });
 
-    it('render user win content when the result is "USER_WIN', () => {
+    it('render user win content when the result is "USER_WIN', async () => {
       vi.mocked(usePlayground).mockReturnValueOnce({
         gameStage: "RESULT",
         userChoice: "PAPER",
@@ -89,10 +89,10 @@ describe("<Playground />", () => {
 
       render(<Playground />);
 
-      expect(screen.getByText(/YOU WIN/));
+      expect(await screen.findByText(/YOU WIN/));
     });
 
-    it('render use loose content when the result is "HOUSE_WIN', () => {
+    it('render use loose content when the result is "HOUSE_WIN', async  () => {
       vi.mocked(usePlayground).mockReturnValueOnce({
         gameStage: "RESULT",
         userChoice: "PAPER",
@@ -102,7 +102,7 @@ describe("<Playground />", () => {
 
       render(<Playground />);
 
-      expect(screen.getByText(/YOU LOOSE/));
+      expect(await screen.findByText(/YOU LOOSE/));
     });
   });
 });

@@ -10,7 +10,7 @@ const OpenInstructionsButtonArea = () => {
 
   return (
     <>
-      <div className="inset-0 flex items-center justify-center">
+      <div className="flex items-center justify-end mx-16">
         <OpenModalButton openModal={openModal} />
       </div>
       <Transition appear show={shouldShowModal} as={Fragment}>
