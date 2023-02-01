@@ -1,5 +1,5 @@
-import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 const ModalContent = () => (
   <>
@@ -27,7 +27,7 @@ const ModalContent = () => (
           leaveTo="opacity-0 scale-95"
         >
           <Dialog.Panel className="ax-w-mdm transform overflow-hidden rounded-2xl bg-white p-12 align-middle shadow-xl transition-all flex justify-center">
-            <img src="./image-rules.svg" alt="image rules" />
+            <img src="./image-rules.svg" alt="Game rules" />
           </Dialog.Panel>
         </Transition.Child>
       </div>

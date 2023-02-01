@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  jest:
+  tests:
     defaults:
       run:
         working-directory: ./app

@@ -37,7 +37,7 @@ module.exports = {
         alias: [
           {
             find: "@rps",
-            replacement: path.resolve(__dirname, "./src"),
+            replacement: "../"
           },
         ],
       },
