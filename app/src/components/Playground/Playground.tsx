@@ -65,7 +65,7 @@ const Playground = () => {
   };
 
   return (
-    <main data-testid="playground" className="p-8">
+    <main data-testid="playground">
       <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>{views[gameStage]}</Suspense>
     </main>
   );
