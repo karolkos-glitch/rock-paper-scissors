@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import ModalContent from "..";
+import { Dialog, Transition } from "@headlessui/react";
+
+<Meta title="Game Rules Modal/Modal Content" component={ModalContent} />
+
+# ModalContent
+
+<Canvas>
+  <Story name="Modal Content">
+    <Transition.Root show={true}>
+      <Dialog open={true} onClose={() => null}>
+        <ModalContent />
+      </Dialog>
+    </Transition.Root>
+  </Story>
+</Canvas>

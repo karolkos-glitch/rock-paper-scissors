@@ -1,6 +1,6 @@
-import { expect, afterEach } from 'vitest';
-import { cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend';
+import { expect, afterEach } from "vitest";
+import { cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/extend";
 
 // extends Vitest's expect method with methods from react-testing-library
 // expect.extend(matchers);

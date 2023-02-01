@@ -41,13 +41,13 @@ export const usePlayground = () => {
   // public
   const chooseOption = async (userOption: GAME_CHOICES) => {
     _displayWaitingForHouseChoice(userOption);
-      const houseOption = await retrieveHouseOption();
-      _displayHouseChoice(houseOption, userOption);
-      setTimeout(() => {
-        const result = resolveGame(userOption, houseOption);
-        _displayResult(result, userOption, houseOption);
-        setNewScore(result);
-      }, 4000);
+    const houseOption = await retrieveHouseOption();
+    _displayHouseChoice(houseOption, userOption);
+    setTimeout(() => {
+      const result = resolveGame(userOption, houseOption);
+      _displayResult(result, userOption, houseOption);
+      setNewScore(result);
+    }, 4000);
   };
 
   const userChoice = retrieveUserChoice(activeState);
