@@ -7,7 +7,7 @@ describe("<App />", () => {
   it("should render the header and the playground", () => {
     render(<App />);
 
-    expect(screen.getAllByRole('button')).toHaveLength(4);
+    expect(screen.getAllByRole("button")).toHaveLength(4);
     getHeaderElements();
     getStarterPlaygroundComponents();
   });

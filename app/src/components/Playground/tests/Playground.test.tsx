@@ -92,7 +92,7 @@ describe("<Playground />", () => {
       expect(await screen.findByText(/YOU WIN/));
     });
 
-    it('render use loose content when the result is "HOUSE_WIN', async  () => {
+    it('render use loose content when the result is "HOUSE_WIN', async () => {
       vi.mocked(usePlayground).mockReturnValueOnce({
         gameStage: "RESULT",
         userChoice: "PAPER",
