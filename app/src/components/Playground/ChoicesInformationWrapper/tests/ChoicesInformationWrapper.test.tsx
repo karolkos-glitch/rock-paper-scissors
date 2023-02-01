@@ -1,9 +1,11 @@
 import { render } from "@testing-library/react";
 import ChoicesInformationWrapper from "..";
 
-describe('<ChoicesInformationWrapper />', () => {
-  it('smoke test - no userChoice and houseChoice', () => {
-    const { asFragment } = render(<ChoicesInformationWrapper userChoice={null} houseChoice={null} />);
+describe("<ChoicesInformationWrapper />", () => {
+  it("smoke test - no userChoice and houseChoice", () => {
+    const { asFragment } = render(
+      <ChoicesInformationWrapper userChoice={null} houseChoice={null} />
+    );
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -33,10 +35,12 @@ describe('<ChoicesInformationWrapper />', () => {
         </div>
       </DocumentFragment>
     `);
-  })
+  });
 
-  it('smoke test - userChoice and no houseChocie', () => {
-    const { asFragment } = render(<ChoicesInformationWrapper userChoice={"PAPER"} houseChoice={null} />);
+  it("smoke test - userChoice and no houseChocie", () => {
+    const { asFragment } = render(
+      <ChoicesInformationWrapper userChoice={"PAPER"} houseChoice={null} />
+    );
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -74,10 +78,14 @@ describe('<ChoicesInformationWrapper />', () => {
         </div>
       </DocumentFragment>
     `);
-  })
+  });
 
-  it('smoke test - userChoice, houseChoice, and children', () => {
-    const { asFragment } = render(<ChoicesInformationWrapper userChoice={"ROCK"} houseChoice={"SCISSORS"}>Some children of the component</ChoicesInformationWrapper>);
+  it("smoke test - userChoice, houseChoice, and children", () => {
+    const { asFragment } = render(
+      <ChoicesInformationWrapper userChoice={"ROCK"} houseChoice={"SCISSORS"}>
+        Some children of the component
+      </ChoicesInformationWrapper>
+    );
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -128,5 +136,5 @@ describe('<ChoicesInformationWrapper />', () => {
         </div>
       </DocumentFragment>
     `);
-  })
-})
+  });
+});

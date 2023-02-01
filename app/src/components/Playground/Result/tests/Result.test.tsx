@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
 import Result from "..";
 
-describe('<Result />', () => {
-  it('smoke test - result is null', () => {
-    const {asFragment} = render(<Result result={null}/>)
+describe("<Result />", () => {
+  it("smoke test - result is null", () => {
+    const { asFragment } = render(<Result result={null} />);
 
-    expect(asFragment()).toMatchInlineSnapshot('<DocumentFragment />');
+    expect(asFragment()).toMatchInlineSnapshot("<DocumentFragment />");
   });
 
   it('smoke test - result is "DRAW"', () => {
-    const {asFragment} = render(<Result result={"DRAW"}/>)
+    const { asFragment } = render(<Result result={"DRAW"} />);
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -24,10 +24,10 @@ describe('<Result />', () => {
         </div>
       </DocumentFragment>
     `);
-  })
+  });
 
   it('smoke test - reusult is "USER_WIN"', () => {
-    const {asFragment} = render(<Result result={"USER_WIN"}/>)
+    const { asFragment } = render(<Result result={"USER_WIN"} />);
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -42,10 +42,10 @@ describe('<Result />', () => {
         </div>
       </DocumentFragment>
     `);
-  })
+  });
 
   it('smoke test - result is "HOUSE_WIN"', () => {
-    const {asFragment} = render(<Result result={"HOUSE_WIN"} />)
+    const { asFragment } = render(<Result result={"HOUSE_WIN"} />);
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -60,5 +60,5 @@ describe('<Result />', () => {
         </div>
       </DocumentFragment>
     `);
-  })
-})
+  });
+});

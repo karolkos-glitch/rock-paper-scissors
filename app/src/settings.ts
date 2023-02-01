@@ -18,7 +18,6 @@ interface WaitingForHouseChoiceState {
   userChoice: GAME_CHOICES;
 }
 
-
 interface HouseChoiceState {
   type: "HOUSE_CHOICE";
   houseChoice: GAME_CHOICES;

@@ -1,4 +1,4 @@
-import {lazy, Suspense} from 'react';
+import { lazy, Suspense } from "react";
 import usePlayground from "./hooks/usePlayground";
 import InGameView from "./InGameView";
 import Option from "./Option";
@@ -6,8 +6,10 @@ import Option from "./Option";
 const Playground = () => {
   const { gameStage, tryAgain, result, houseChoice, userChoice, chooseOption } =
     usePlayground();
-  const ChoicesInformationWrapper = lazy(() => import("./ChoicesInformationWrapper"));
-  const Result = lazy(() => import('./Result'));
+  const ChoicesInformationWrapper = lazy(
+    () => import("./ChoicesInformationWrapper")
+  );
+  const Result = lazy(() => import("./Result"));
 
   const views: Record<typeof gameStage, React.ReactNode> = {
     USER_CHOICE: (
@@ -58,7 +60,11 @@ const Playground = () => {
     ),
   };
 
-  return <main data-testid="playground" className="p-8"><Suspense>{views[gameStage]}</Suspense></main>;
+  return (
+    <main data-testid="playground" className="p-8">
+      <Suspense>{views[gameStage]}</Suspense>
+    </main>
+  );
 };
 
 export default Playground;

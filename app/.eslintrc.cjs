@@ -2,8 +2,8 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:import/recommended', 'plugin:jsx-a11y/recommended', 'plugin:@typescript-eslint/recommended', 'eslint-config-prettier', 'plugin:storybook/recommended'],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "./"
+    "project": "tsconfig.json",
+    "tsconfigRootDir": __dirname,
   },
   plugins: ["@typescript-eslint", "import"],
   settings: {

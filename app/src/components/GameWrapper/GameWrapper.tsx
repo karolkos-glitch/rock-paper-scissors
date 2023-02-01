@@ -1,19 +1,19 @@
 interface GameWrapperProps {
   headerComponent?: React.ReactNode;
   children?: React.ReactNode;
-  openInstructionsButtonArea?: React.ReactNode;
+  gameRulesModalHandler?: React.ReactNode;
 }
 
 const GameWrapper = ({
   children = null,
   headerComponent = null,
-  openInstructionsButtonArea = null,
+  gameRulesModalHandler = null,
 }: GameWrapperProps) => {
   return (
     <div>
       {headerComponent}
       {children}
-      {openInstructionsButtonArea}
+      {gameRulesModalHandler}
     </div>
   );
 };

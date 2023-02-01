@@ -80,6 +80,8 @@ describe.concurrent("usePlayground - utils - resolveGame", () => {
   });
 
   it("throws Error", () => {
-    expect(() => resolveGame("" as GAME_CHOICES, "" as GAME_CHOICES)).toThrowError("INVALID OPTION");
-  })
+    expect(() =>
+      resolveGame("" as GAME_CHOICES, "" as GAME_CHOICES)
+    ).toThrowError("INVALID OPTION");
+  });
 });
