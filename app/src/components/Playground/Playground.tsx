@@ -50,7 +50,7 @@ const Playground = () => {
       >
         <Result result={result}>
           <button
-            className="p-4 m-4 bg-white text-bg-2 hover:text-red rounded-lg"
+            className="p-4 m-4 bg-white text-dark-text hover:text-red rounded-lg"
             onClick={tryAgain}
           >
             PLAY AGAIN
