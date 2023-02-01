@@ -33,6 +33,7 @@ const Playground = () => {
     ),
     WAITNG_FOR_HOUSE_CHOICE: (
       <ChoicesInformationWrapper
+        shouldEnterAnimationAppear
         houseChoice={houseChoice}
         userChoice={userChoice}
       />
@@ -45,24 +46,29 @@ const Playground = () => {
     ),
     RESULT: (
       <ChoicesInformationWrapper
+        shouldEnterAnimationAppear
         houseChoice={houseChoice}
         userChoice={userChoice}
       >
-        <Result result={result}>
-          <button
-            className="p-4 m-4 bg-white text-dark-text hover:text-red rounded-lg"
-            onClick={tryAgain}
-          >
-            PLAY AGAIN
-          </button>
-        </Result>
+        <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>
+          <Result result={result}>
+            <button
+              className="p-4 m-4 bg-white text-dark-text hover:text-red rounded-lg"
+              onClick={tryAgain}
+            >
+              PLAY AGAIN
+            </button>
+          </Result>
+        </Suspense>
       </ChoicesInformationWrapper>
     ),
   };
 
   return (
-    <main data-testid="playground" className="p-8">
-      <Suspense>{views[gameStage]}</Suspense>
+    <main data-testid="playground">
+      <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>
+        {views[gameStage]}
+      </Suspense>
     </main>
   );
 };

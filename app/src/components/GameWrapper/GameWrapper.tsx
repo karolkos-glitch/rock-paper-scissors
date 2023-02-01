@@ -10,7 +10,7 @@ const GameWrapper = ({
   gameRulesModalHandler = null,
 }: GameWrapperProps) => {
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col justify-between h-[100vh]">
       {headerComponent}
       {children}
       {gameRulesModalHandler}

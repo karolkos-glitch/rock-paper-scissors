@@ -9,7 +9,7 @@ const retrieveHouseOption = async (): Promise<GAME_CHOICES> => {
   };
 
   return new Promise((resolve) =>
-    setTimeout(() => resolve(results[optionString]), 3000)
+    setTimeout(() => resolve(results[optionString]), 2000)
   );
 };
 

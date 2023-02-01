@@ -45,9 +45,9 @@ export const usePlayground = () => {
     _displayHouseChoice(houseOption, userOption);
     setTimeout(() => {
       const result = resolveGame(userOption, houseOption);
-      _displayResult(result, userOption, houseOption);
+      _displayResult(result, houseOption, userOption);
       setNewScore(result);
-    }, 4000);
+    }, 1000);
   };
 
   const userChoice = retrieveUserChoice(activeState);

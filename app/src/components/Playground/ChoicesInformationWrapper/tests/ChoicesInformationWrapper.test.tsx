@@ -10,7 +10,7 @@ describe("<ChoicesInformationWrapper />", () => {
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
         <div
-          class="grid grid-flow-col justify-center items-center gap-16"
+          class="grid grid-flow-col justify-center items-center gap-16 m-w-full"
         >
           <div>
             <div
@@ -45,7 +45,7 @@ describe("<ChoicesInformationWrapper />", () => {
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
         <div
-          class="grid grid-flow-col justify-center items-center gap-16"
+          class="grid grid-flow-col justify-center items-center gap-16 m-w-full"
         >
           <div>
             <div
@@ -90,7 +90,7 @@ describe("<ChoicesInformationWrapper />", () => {
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
         <div
-          class="grid grid-flow-col justify-center items-center gap-16"
+          class="grid grid-flow-col justify-center items-center gap-16 m-w-full"
         >
           <div>
             <div
