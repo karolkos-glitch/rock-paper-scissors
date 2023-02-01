@@ -16,7 +16,7 @@ const ChoicesInformationWrapper = ({
   children = null,
   userChoice,
   houseChoice,
-  shouldEnterAnimationAppear = false
+  shouldEnterAnimationAppear = false,
 }: ChoicesInformationWrapperProps) => {
   const placeHolderStyles =
     "w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] rounded-[50%] bg-bg-2";
@@ -36,9 +36,9 @@ const ChoicesInformationWrapper = ({
           </div>
         ) : null}
         <ChoicePresentation label="THE HOUSE PICKED">
-            {houseChoice ? (
-              <Option type={houseChoice} />
-            ) : (
+          {houseChoice ? (
+            <Option type={houseChoice} />
+          ) : (
             <div className={placeHolderStyles} />
           )}
         </ChoicePresentation>

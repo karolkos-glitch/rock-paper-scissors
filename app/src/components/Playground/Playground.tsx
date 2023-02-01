@@ -50,7 +50,7 @@ const Playground = () => {
         houseChoice={houseChoice}
         userChoice={userChoice}
       >
-      <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>
+        <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>
           <Result result={result}>
             <button
               className="p-4 m-4 bg-white text-dark-text hover:text-red rounded-lg"
@@ -66,7 +66,9 @@ const Playground = () => {
 
   return (
     <main data-testid="playground">
-      <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>{views[gameStage]}</Suspense>
+      <Suspense fallback={<div className="h-[100vh] w-[100vw]" />}>
+        {views[gameStage]}
+      </Suspense>
     </main>
   );
 };

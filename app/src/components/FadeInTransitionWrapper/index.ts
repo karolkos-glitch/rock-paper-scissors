@@ -1,1 +1,1 @@
-export { default }  from './FadeInTransitionWrapper';
+export { default } from "./FadeInTransitionWrapper";
