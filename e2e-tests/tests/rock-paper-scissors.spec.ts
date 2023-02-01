@@ -3,8 +3,8 @@ import visitMainPage from '../utils/visitMainPage';
 
 test.describe('RPS', () => {
 
-  test.beforeEach(async ({ page }) => {
-    await visitMainPage(page);
+  test.beforeEach(async ({ page, baseURL }) => {
+    await visitMainPage(page, baseURL);
   })
 
   test.describe('Title of the page', () => {
